@@ -70,8 +70,9 @@ func readfile():
 	lines = text.split("\n")
 	var differences = difference(lines, oldlines)
 	for line in differences:
+		print(line)
 		if "[GAME]" in line:
-			if "> " in line: return
+			if "> " in line: continue
 			var codestring = line.split("[GAME]")
 			make_script(codestring[1])
 	oldlines = lines
@@ -89,7 +90,7 @@ func make_script(string):
 func mainfunc():
 	if !loaded: return
 	readfile()
-	yield(get_tree().create_timer(1,false),"timeout")
+	yield(get_tree().create_timer(0.1,false),"timeout")
 	mainfunc()
 
 func _on_LatestLog_timeout():

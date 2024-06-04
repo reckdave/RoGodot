@@ -11,6 +11,7 @@ config_version=4
 [application]
 
 config/name="RoGodot"
+run/main_scene="res://RoGodot/MASTERSCENE.tscn"
 config/icon="res://RoGodot/icon.png"
 
 [debug]
@@ -24,6 +25,10 @@ window/size/height=0
 window/size/resizable=false
 window/size/borderless=true
 window/vsync/use_vsync=false
+
+[global]
+
+Logging=false
 
 [physics]
 
